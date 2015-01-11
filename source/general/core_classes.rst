@@ -59,7 +59,9 @@
 
 	}
 
-.. note:: 如果你需要在你的類別中使用建構函數（Constructor），確定有在裡面擴充父類別的建構函數（Constructor）： ::
+.. note:: 如果你需要在你的類別中使用建構函數（Constructor），確定有在裡面擴充父類別的建構函數（Constructor）：
+
+::
 
 		class MY_Input extends CI_Input {
 
