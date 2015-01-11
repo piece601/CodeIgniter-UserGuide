@@ -19,4 +19,4 @@ CodeIgniter 具有”自動載入（auto-load）“的功能，可允許程式�
 
 此外，如果你想要在 CodeIgniter 中使用 `Composer <https://getcomposer.org/>`_
 自動載入器，只要設定 ``$config['composer_autoload']`` 成 ``TRUE`` 或者
-設定客製化路徑 **application/config/config.php** 。
+設定客製化路徑 **application/config/config.php** 設定檔。
