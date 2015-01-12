@@ -139,7 +139,7 @@ CodeIgniter 使用少許幾個全域函數來協助運行，你也可以在任�
 	:returns:	TRUE 如果當前連線使用 HTTP-over-SSL，否則 FALSE
 	:rtype:	bool
 
-	Returns TRUE 如果當前是安全（HTTPS）連線，否則 FALSE
+	回傳 TRUE 如果當前是安全（HTTPS）連線，否則 FALSE
 	在其它情況下（包含 non-HTTP 請求）。
 
 .. function:: is_cli()
