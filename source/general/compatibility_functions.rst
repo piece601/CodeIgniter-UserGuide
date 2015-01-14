@@ -1,18 +1,14 @@
 #######################
-Compatibility Functions
+相容性函數
 #######################
 
-CodeIgniter provides a set of compatibility functions that enable
-you to use functions what are otherwise natively available in PHP,
-but only in higher versions or depending on a certain extension.
+CodeIgniter 提供一組相容性函數，使你可以使用非原生可使用的 PHP 函數，
+但是只有在更高的版本或者依賴於一定的擴充插件。
 
-Being custom implementations, these functions will also have some
-set of dependencies on their own, but are still useful if your
-PHP setup doesn't offer them natively.
+作為客製化實作，這些函數對他們本身來說，也將有一些依賴性設定，
+如果你的 PHP 安裝沒有提供原生的函數，這個方法仍然是有用的。
 
-.. note:: Much like the `common functions <common_functions>`, the
-	compatibility functions are always available, as long as
-	their dependencies are met.
+.. note:: 大部份像是 `通用函數 <common_functions>` ，只要依賴條件滿足，相容性函數總是可以使用的。
 
 .. contents::
   :local:
@@ -22,75 +18,74 @@ PHP setup doesn't offer them natively.
   <div class="custom-index container"></div>
 
 ****************
-Password Hashing
+密碼雜湊
 ****************
 
-This set of compatibility functions offers a "backport" of PHP's
-standard `Password Hashing extension <http://php.net/password>`_
-that is otherwise available only since PHP 5.5.
+這組相容性函數提供一個“backport”在 PHP 的標準
+ `Password Hashing extension <http://php.net/password>`_ ，
+其他方式可以使用，就是將 PHP 版本升級到 PHP 5.5 。
 
-Dependencies
+依賴
 ============
 
 - PHP 5.3.7
-- ``CRYPT_BLOWFISH`` support for ``crypt()``
+- ``CRYPT_BLOWFISH`` 提供給 ``crypt()``
 
-Constants
+常數
 =========
 
 - ``PASSWORD_BCRYPT``
 - ``PASSWORD_DEFAULT``
 
-Function reference
+函數參考
 ==================
 
 .. function:: password_get_info($hash)
 
-	:param	string	$hash: Password hash
-	:returns:	Information about the hashed password
+	:param	string	$hash: 雜湊的密碼
+	:returns:	雜湊密碼的資訊
 	:rtype:	array
 
-	For more information, please refer to the `PHP manual for
+	要獲得更多資訊，請參考 `PHP manual for
 	password_get_info() <http://php.net/password_get_info>`_.
 
 .. function:: password_hash($password, $algo[, $options = array()])
 
-	:param	string	$password: Plain-text password
-	:param	int	$algo: Hashing algorithm
-	:param	array	$options: Hashing options
-	:returns:	Hashed password or FALSE on failure
+	:param	string	$password: 明文密碼
+	:param	int	$algo: 雜湊演算法
+	:param	array	$options: 雜湊選項
+	:returns:	雜湊密碼，或者錯誤 FALSE
 	:rtype:	string
 
-	For more information, please refer to the `PHP manual for
+	要獲得更多資訊，請參考 `PHP manual for
 	password_hash() <http://php.net/password_hash>`_.
 
-	.. note:: Unless you provide your own (and valid) salt, this function
-		has a further dependency on an available CSPRNG source. Each
-		of the following would satisfy that:
+	.. note:: 除非你提供你自己的（以及有效的）salt，這個函數可以進一步提供依賴於可使用的 CSPRNG source。
+	 	滿足下列每一個條件：
 		- ``mcrypt_create_iv()`` with ``MCRYPT_DEV_URANDOM``
 		- ``openssl_random_pseudo_bytes()``
 		- /dev/arandom
 		- /dev/urandom
 
-.. function:: password_needs_rehash()
+.. function:: password_needs_rehash($hash, $algo [, $options = array()])
 
-	:param	string	$hash: Password hash
-	:param	int	$algo: Hashing algorithm
-	:param	array	$options: Hashing options
-	:returns:	TRUE if the hash should be rehashed to match the given algorithm and options, FALSE otherwise
+	:param	string	$hash: 雜湊密碼
+	:param	int	$algo: 雜湊演算法
+	:param	array	$options: 雜湊選項
+	:returns:	TRUE 如果雜湊可以被匹配於輸入的演算法以及選項給重新雜湊，否則 FALSE
 	:rtype:	bool
 
-	For more information, please refer to the `PHP manual for
+	要獲得更多資訊，請參考 `PHP manual for
 	password_needs_rehash() <http://php.net/password_needs_rehash>`_.
 
 .. function:: password_verify($password, $hash)
 
-	:param	string	$password: Plain-text password
-	:param	string	$hash: Password hash
-	:returns:	TRUE if the password matches the hash, FALSE if not
+	:param	string	$password: 純文本密碼
+	:param	string	$hash: 雜湊密碼
+	:returns:	TRUE 如果密碼匹配雜湊，如果不是 FALSE
 	:rtype:	bool
 
-	For more information, please refer to the `PHP manual for
+	要獲得更多資訊，請參考 `PHP manual for
 	password_verify() <http://php.net/password_verify>`_.
 
 *********************
