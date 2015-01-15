@@ -20,7 +20,7 @@ CodeIgniter 讓你快取自己的網頁，為了要達到最大效能。
 
 	$this->output->cache($n);
 
-``n`` 代表的是你的頁面預期要保留到更新（remain cached between refreshes）的 **分鐘（minutes）**
+``n`` 代表的是你的頁面預期要保留到更新（remain cached between refreshes）的 **分鐘（minutes）** 。
 
 上面的快取語句可以隨意放在（Controller）的方法（function）裡頭，不會影響到呈現的順序，所以放在你覺得最合理的地方即可。
 
