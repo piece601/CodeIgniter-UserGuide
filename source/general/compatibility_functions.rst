@@ -21,7 +21,7 @@ CodeIgniter 提供一組相容性函數，使你可以使用非原生可使用�
 密碼雜湊
 ****************
 
-這組相容性函數提供一個“backport”在 PHP 的標準 `Password Hashing extension <http://php.net/password>`_ ，其他方式可以使用，就是將 PHP 版本升級到 PHP 5.5 。
+這組相容性函數提供一個“反向移植”在 PHP 的標準 `Password Hashing extension <http://php.net/password>`_ ，其它方式可以使用，就是將 PHP 版本升級到 PHP 5.5 。
 
 依賴
 ============
@@ -120,24 +120,22 @@ PHP 5.5 respectively.
 	:param	int	$iterations: 迭代推導過程中執行的次數
 	:param	int	$length: 輸出字串長度
 	:param	bool	$raw_output: 是否輸出原始二進制資料
-	:returns:	如果raw_output 設置為TRUE， 則回傳原始二進制數據表示的信息摘要，否則回傳 16 進制小寫字串格式表示的信息摘要。
+	:returns:	如果 raw_output 設置為TRUE， 則回傳原始二進制數據表示的信息摘要，否則回傳 16 進制小寫字串格式表示的信息摘要。
 	:rtype:	string
 
 	要獲得更多資訊，請參考 `PHP manual for
 	hash_pbkdf2() <http://php.net/hash_pbkdf2>`_ 。
 
 ****************
-Multibyte String
+多字節字串
 ****************
 
-This set of compatibility functions offers limited support for PHP's
-`Multibyte String extension <http://php.net/mbstring>`_. Because of
-the limited alternative solutions, only a few functions are available.
+這個相容性函數提供有限的參考 PHP's
+`Multibyte String extension <http://php.net/mbstring>`_ 。由於是有限的替代解決方法，只有少數的函數是可用的。
 
-.. note:: When a character set parameter is ommited,
-	``$config['charset']`` will be used.
+.. note:: 當一個字元參數省略， ``$config['charset']`` 將被用。
 
-Dependencies
+依賴
 ============
 
 - `iconv <http://php.net/iconv>`_ extension
@@ -152,14 +150,14 @@ Dependencies
 .. note:: For you own dependency check on the actual mbstring
 	extension, use the ``MB_ENABLED`` constant.
 
-Function reference
+函數參考
 ==================
 
 .. function:: mb_strlen($str[, $encoding = NULL])
 
-	:param	string	$str: Input string
-	:param	string	$encoding: Character set
-	:returns:	Number of characters in the input string or FALSE on failure
+	:param	string	$str: 輸入字串
+	:param	string	$encoding: 字元集合
+	:returns:	字串長度，或者錯誤 FALSE
 	:rtype:	string
 
 	For more information, please refer to the `PHP manual for
