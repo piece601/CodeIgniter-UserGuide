@@ -21,9 +21,7 @@ CodeIgniter 提供一組相容性函數，使你可以使用非原生可使用�
 密碼雜湊
 ****************
 
-這組相容性函數提供一個“backport”在 PHP 的標準
- `Password Hashing extension <http://php.net/password>`_ ，
-其他方式可以使用，就是將 PHP 版本升級到 PHP 5.5 。
+這組相容性函數提供一個“backport”在 PHP 的標準 `Password Hashing extension <http://php.net/password>`_ ，其他方式可以使用，就是將 PHP 版本升級到 PHP 5.5 。
 
 依賴
 ============
@@ -47,7 +45,7 @@ CodeIgniter 提供一組相容性函數，使你可以使用非原生可使用�
 	:rtype:	array
 
 	要獲得更多資訊，請參考 `PHP manual for
-	password_get_info() <http://php.net/password_get_info>`_.
+	password_get_info() <http://php.net/password_get_info>`_ 。
 
 .. function:: password_hash($password, $algo[, $options = array()])
 
@@ -76,7 +74,7 @@ CodeIgniter 提供一組相容性函數，使你可以使用非原生可使用�
 	:rtype:	bool
 
 	要獲得更多資訊，請參考 `PHP manual for
-	password_needs_rehash() <http://php.net/password_needs_rehash>`_.
+	password_needs_rehash() <http://php.net/password_needs_rehash>`_ 。
 
 .. function:: password_verify($password, $hash)
 
@@ -86,47 +84,47 @@ CodeIgniter 提供一組相容性函數，使你可以使用非原生可使用�
 	:rtype:	bool
 
 	要獲得更多資訊，請參考 `PHP manual for
-	password_verify() <http://php.net/password_verify>`_.
+	password_verify() <http://php.net/password_verify>`_ 。
 
 *********************
-Hash (Message Digest)
+雜湊（訊息摘要）
 *********************
 
 This compatibility layer contains backports for the ``hash_equals()``
 and ``hash_pbkdf2()`` functions, which otherwise require PHP 5.6 and/or
 PHP 5.5 respectively.
 
-Dependencies
+依賴
 ============
 
 - None
 
-Function reference
+函數參考
 ==================
 
 .. function:: hash_equals($known_string, $user_string)
 
-	:param	string	$known_string: Known string
-	:param	string	$user_string: User-supplied string
-	:returns:	TRUE if the strings match, FALSE otherwise
+	:param	string	$known_string: 已知的字串
+	:param	string	$user_string: 使用者提供的字串
+	:returns:	TRUE 如果字串匹配，否則 FALSE
 	:rtype:	string
 
-	For more information, please refer to the `PHP manual for
-	hash_equals() <http://php.net/hash_equals>`_.
+	要獲得更多資訊，請參考 `PHP manual for
+	hash_equals() <http://php.net/hash_equals>`_ 。
 
 .. function:: hash_pbkdf2($algo, $password, $salt, $iterations[, $length = 0[, $raw_output = FALSE]])
 
-	:param	string	$algo: Hashing algorithm
-	:param	string	$password: Password
-	:param	string	$salt: Hash salt
-	:param	int	$iterations: Number of iterations to perform during derivation
-	:param	int	$length: Output string length
-	:param	bool	$raw_output: Whether to return raw binary data
-	:returns:	Password-derived key or FALSE on failure
+	:param	string	$algo: 雜湊演算法
+	:param	string	$password: 密碼
+	:param	string	$salt: 雜湊的 salt
+	:param	int	$iterations: 迭代推導過程中執行的次數
+	:param	int	$length: 輸出字串長度
+	:param	bool	$raw_output: 是否輸出原始二進制資料
+	:returns:	如果raw_output 設置為TRUE， 則回傳原始二進制數據表示的信息摘要，否則回傳 16 進制小寫字串格式表示的信息摘要。
 	:rtype:	string
 
-	For more information, please refer to the `PHP manual for
-	hash_pbkdf2() <http://php.net/hash_pbkdf2>`_.
+	要獲得更多資訊，請參考 `PHP manual for
+	hash_pbkdf2() <http://php.net/hash_pbkdf2>`_ 。
 
 ****************
 Multibyte String
