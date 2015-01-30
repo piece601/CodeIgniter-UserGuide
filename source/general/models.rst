@@ -1,4 +1,4 @@
-##########
+###########
 模型 Models
 ##########
 
@@ -51,14 +51,14 @@ Models 是 PHP 類別，它是被設計來存取資料庫用的。比如說，�
 
 .. note:: 在上述例子我們使用 :doc:`Query Builder	<../database/query_builder>` 方法去存取資料庫。
 
-.. note:: 為簡單起見，在本實施例中，我們直接地使用 ``$_POST`` 。這通常是不好的做法，更好的方法將是使用 :doc:`Input Library <../libraries/input>` ``$this->input->post('title')`` 。
+.. note:: 為簡單起見，在本實施例中，我們直接地使用 ``$_POST`` 。這通常是不好的做法，更好的方法將是使用 :doc:`Input 函式庫 <../libraries/input>` ``$this->input->post('title')`` 。
 
 剖析 Model
 ==================
 
-Model 類別是儲存在 **application/models/** 目錄。它們可以巢狀的包含在子目錄中，如果你想要分類組織了話，這是個好方法。
+Model 類別是儲存在 **application/models/** 目錄。 它們可以巢狀的包含在子目錄中，如果你想要分類組織了話，這是個好方法。
 
-基本的 Model 類別原型長這樣::
+基本的 Model 類別原型長這樣： ::
 
 	class Model_name extends CI_Model {
 
@@ -69,7 +69,7 @@ Model 類別是儲存在 **application/models/** 目錄。它們可以巢狀的�
 
 	}
 
-這個 **Model_name** 是你的類別名稱。類別名稱 **一定要** 第一個字母大寫的，其餘部分小寫的。請確認你的類別擴充基本的 Model 類別。
+這個 **Model_name** 是你的類別名稱。 類別名稱 **一定要** 第一個字母大寫的，其餘部分小寫的。請確認你的類別擴展基本的 Model 類別。
 
 檔案名稱要跟類別名稱一樣。例如： ::
 
@@ -89,7 +89,7 @@ Model 類別是儲存在 **application/models/** 目錄。它們可以巢狀的�
 載入 Model
 ===============
 
-你的 models 會被呼叫，通過 :doc:`controller <controllers>` 呼叫方法。 用以下方法載入 models： ::
+你的 models 會被呼叫，通過 :doc:`控制器 Controller <controllers>` 呼叫方法。 用以下方法載入 models： ::
 
 	$this->load->model('model_name');
 
@@ -134,8 +134,8 @@ Model 類別是儲存在 **application/models/** 目錄。它們可以巢狀的�
 
 當 Model 被載入近來，但是 **還沒** 自動地連接到資料庫。 提供給您連接資料庫的選項在下面：
 
--  您可以連接使用標準資料庫的方法 :doc:`點擊這裡 <../database/connecting>` 無論你從 Controller 類別 或 Model 類別連接都可以。
--  你可以告訴 Model 加載時自動連接資料庫，透過第三個參數傳遞 TRUE（Boolean）自動連接和連接設置，在你的資料庫設定文件中定義將被使用： ::
+-  您可以連接使用標準資料庫的方法 :doc:`這裡描述 <../database/connecting>` 無論你從 Controller 類別 或 Model 類別連接都可以。
+-  你可以告訴 Model 加載時自動連接資料庫，透過第三個參數傳遞TRUE（Boolean）自動連接和連接設置，在你的資料庫設定文件中定義將被使用::
 
 	$this->load->model('model_name', '', TRUE);
 

@@ -1,13 +1,13 @@
-###########
+##########
 視圖 Views
-###########
+##########
 
-視圖（View）只是簡單的網站頁面，或者片段頁面，像是 header， footer，sidebar，等等。事實上，視圖（Views）可以很彈性的嵌入到其他視圖（包含其它 views 等等）如果你需要這樣的層次結構。
+視圖（View）只是簡單的網站頁面，或者片段頁面，像是 header， footer，sidebar，等等。事實上，Views 可以很彈性的嵌入到其它 Views（包含其它 views 等等）如果你需要這樣的層次結構。
 
 
-視圖（Views）無法直接呼叫，他們一定要通過 :doc:`控制器 Controller <controllers>` 來呼叫。 記得在 MVC framework 時， :doc:`控制器 Controllers <controllers>` 像是交通警察一樣工作，所以他負責去抓取指定的視圖（View）。如果你還沒看過控制器（Controllers）頁面，你應該要先看過唷。
+視圖（Views）無法直接呼叫，他們一定要通過 :doc:`控制器 Controller <controllers>` 來呼叫。 記得在 MVC framework 時， :doc:`Controllers <controllers>` 像是交通警察一樣工作，所以他負責去抓取指定的視圖（View）。如果你還沒看過控制器（Controllers）頁面，你應該要先看過唷。
 
-使用範例 :doc:`控制器 Controller <controllers>` 你會建立一個控制器（Controller）頁面，讓你增加視圖（View）到裡面。
+使用範例 :doc:`控制器 Controller <controllers>` 你會建立一個 Controller 頁面，讓你增加 View 到裡面。
 
 建立一個 View
 ===============
@@ -47,7 +47,7 @@
 		}
 	}
 
-你通過 URL 來拜訪你的網站，你將會看到你的頁面。這個 URL 大概長這樣::
+你通過 URL 來拜訪你的網站，你將會看到你的頁面。這個 URL 大概長這樣： ::
 
 	example.com/index.php/blog/
 
@@ -71,7 +71,7 @@ CodeIgniter 將會聰明地處理多個呼叫 ``$this->load->view()`` 從 Contro
 
 	}
 
-從上述例子來看，我們運用了 "動態附加資料"，您將會在下面看到。
+從上述例子來看，我們運用了 “動態附加資料” ，您將會在下面看到。
 
 儲存 Views 到子目錄
 ====================================
@@ -170,11 +170,11 @@ CodeIgniter 將會聰明地處理多個呼叫 ``$this->load->view()`` 從 Contro
 	</body>
 	</html>
 
-.. note:: 你會注意到，在上面我們使用PHP的替代語法的例子。如果你不熟悉它，你可以閱讀一下 :doc:`這裡 <alternative_php>` 。
+.. note:: 你會注意到，在上面我們使用 PHP 的替代語法的例子。如果你不熟悉它，你可以閱讀一下 :doc:`這裡 <alternative_php>` 。
 
-資料回傳到 Views
+資料回傳到 views
 =======================
 
-這裡是第三個 **可選的** 參數，它返回讀取那個頁面的整個HTML，而不是將其發送到瀏覽器。如果你在處理資料的狀況下，這個方法是很有用的。如果你設定成 TRUE (boolean) 它就會回傳資料。預設是 false，那麼他就會將 View 發送到瀏覽器了。 如果你要有資料回傳，記得塞入這個變數： ::
+這裡是第三個 **可選的** 參數，它返回讀取那個頁面的整個 HTML，而不是將其發送到瀏覽器。如果你在處理資料的狀況下，這個方法是很有用的。如果你設定成 TRUE（boolean）它就會回傳資料。預設是 false，那麼他就會將 View 發送到瀏覽器了。 如果你要有資料回傳，記得塞入這個變數： ::
 
 	$string = $this->load->view('myfile', '', TRUE);
