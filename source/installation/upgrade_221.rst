@@ -1,5 +1,5 @@
 #############################
-Upgrading from 2.1.3 to 2.1.4
+Upgrading from 2.2.0 to 2.2.1
 #############################
 
 Before performing an update you should take your site offline by

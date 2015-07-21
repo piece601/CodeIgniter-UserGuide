@@ -21,4 +21,8 @@ CodeIgniter 提供一個全功能而且快速的抽像資料庫類別，支援�
 	查詢快取 <caching>
 	使用 Database Forge 管理資料庫 <forge>
 	Database Utilities 類別 <utilities>
+<<<<<<< HEAD
 	Database Driver 參考 <db_driver_reference>
+=======
+	Database Driver 參考 <db_driver_reference>
+>>>>>>> f7ace5f4a02f69146f4efa0c3fac58bcf648b418
